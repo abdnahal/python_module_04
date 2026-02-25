@@ -10,7 +10,7 @@ def file_opener(filename: str) -> None:
 
 def file_writer(filename: str) -> None:
     try:
-        with open(filename, "x+t") as file:
+        with open(filename, "w") as file:
             print("Inscribing preservation data...")
             file.write("[ENTRY 001] New quantum algorithm discovered\n")
             file.write("[ENTRY 002] Efficiency increased by 347%\n")
