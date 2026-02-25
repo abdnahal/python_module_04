@@ -1,3 +1,13 @@
+def file_opener(filename: str) -> None:
+    try:
+        with open(filename, "r") as file:
+            data = file.read()
+            print(data)
+            print()
+    except (FileNotFoundError, PermissionError) as e:
+        print(f"Error oppening the file: {e}")
+
+
 def file_writer(filename: str) -> None:
     try:
         with open(filename, "x+t") as file:
@@ -5,7 +15,7 @@ def file_writer(filename: str) -> None:
             file.write("[ENTRY 001] New quantum algorithm discovered\n")
             file.write("[ENTRY 002] Efficiency increased by 347%\n")
             file.write("[ENTRY 003] Archived by Data Archivist trainee")
-            print(file.read())
+        file_opener(filename)
     except (FileExistsError) as e:
         print(f"Error creating {filename}: {e}")
     finally:
@@ -19,4 +29,3 @@ if __name__ == "__main__":
     print("Storage unit created successfully...\n")
     file_writer(filename)
     print("Archive 'new_discovery.txt' ready for long-term preservation.")
-

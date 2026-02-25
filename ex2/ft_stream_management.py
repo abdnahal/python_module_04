@@ -7,7 +7,8 @@ def streams_tester() -> None:
     print()
     sys.stdout.write(f"[STANDARD] Archive status from {id}: {status}\n")
     sys.stdout.flush()
-    sys.stderr.write("[ALERT] System diagnostic: Communication channels verified\n")
+    data = "[ALERT] System diagnostic: Communication channels verified\n"
+    sys.stderr.write(data)
     sys.stderr.flush()
     sys.stdout.write("[STANDARD] Data transmission complete\n\n")
     sys.stdout.flush()
